@@ -1,0 +1,359 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tplanner</title>
+  <script src="../../resources/mobile/js/lib/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="../../resources/mobile/css/common.css">
+  <link rel="stylesheet" href="../../resources/mobile/css/mobile.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/xpressengine/xeicon@2.3.1/xeicon.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  <div class="scroll-control">
+    <div class="wrap tplanner">
+      <!-- <div class="gnb">
+      <div class="gnb-time"></div>
+      <div class="gnb-content">
+        <div>
+          <img src="../../resources/mobile/images/Cellular_Connection.png" alt="Cellular_Connection">
+          <img src="../../resources/mobile/images/Wifi.png" alt="Wifi">
+          <img src="../../resources/mobile/images/Battery.png" alt="Battery">
+        </div>
+      </div>
+    </div> -->
+      <div class="container">
+        <figure class="nav">
+          <div class="nav-comment">
+            <!-- <img class="nav-comment-img" src="../../resources/mobile/images/comment_img.png" alt="">
+          <i class="xi-calculator icon"></i> -->
+          </div>
+          <div class="nav-content">
+            <i class="xi-cart-o"></i>
+            <i class="xi-user-o" id="userIcon"></i>
+            <i class="xi-bars"></i>
+          </div>
+        </figure>
+        <figure class="card">
+          <div class="card-content">
+            <img class="card-content-img" src="../../resources/mobile/images/card_content_img_1.png" alt="card_content_img_1">
+            <div class="visual">
+              <header class="visual-header">
+                <div class="visual-label">
+                  <h6 class="label-tit">나만의 T플랜</h6>
+                </div>
+                <div class="visual-label">
+                  <div class="label-txt"><span>초기화</span> <span>저장하기</span></div>
+                </div>
+              </header>
+              <figure class="visual-content">
+                <div class="visual-content-selection">
+                  <button class="introduce-selection" id="js-select-view-btn">
+                    <div class="content">
+                      <img src="../../resources/mobile/images/visual_content_01.png" alt="">
+                      휴대폰
+                      <div class="speech-bubble">휴대폰을 선택해보세요</div>
+                    </div>
+                  </button>
+                  <button class="introduce-selection">
+                    <div class="content">
+                      <img src="../../resources/mobile/images/visual_content_02.png" alt="">
+                      결합상품
+                    </div>
+                  </button>
+                  <button class="introduce-selection">
+                    <div class="content">
+                      <img src="../../resources/mobile/images/visual_content_03.png" alt="">
+                      악세서리
+                    </div>
+                  </button>
+                </div>
+                <div class="visual-content-service">
+                  <button class="service-content">
+                    요금제
+                  </button>
+                  <div class="service-content">
+                    <button class="Sale-btn">이용 및 할인방법</button>
+                    <button class="Extra-btn">부가서비스</button>
+                  </div>
+                  <div class="service-content">
+                    <button class="payment-amount">
+                      <h1>월 납부금액</h1>
+                      <h1><span class="payment-num">0</span> <span class="payment-txt">원</span></h1>
+                    </button>
+                  </div>
+                </div>
+                <div class="payment-view">
+                  <!-- 주문서 작성 -->
+                </div>
+                <div class="visual-content-option">
+                  <button class="option-change">옵션 변경</button>
+                  <button class="order">주문하기</button>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </figure>
+        <figure class="product-wrap">
+          <figure class="container">
+            <div class="product-wrap-tit">
+              추천 플랜으로 한번에
+              즐겨보세요!
+            </div>
+
+            <!-- card 01 -->
+            <div class="product-wrap-card">
+              <div class="product-wrap-card-header">
+                <img src="../../resources/mobile/images/product_card-01_01.png" alt="">
+                <div class="text-content">
+                  <div class="text-content-tit">갤럭시 S21로 즐기는 5GX 라이프</div>
+                  <div class="text-content-txt">자세히 보기</div>
+                </div>
+              </div>
+              <div class="product-wrap-card-body">
+                <div class="content">
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-01_02.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">Galaxy S21 Ultra 5G</div>
+                      <div class="text-content-txt">갤럭시 S21 울트라 5G</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-01_03.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">5GX 프라임</div>
+                      <div class="text-content-txt">속도제한 없는 무제한 데이터</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-01_04.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">V컬러링</div>
+                      <div class="text-content-txt">동영상 컬러링 서비스 무료</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-wrap-card-footer">
+                <button class="product-wrap-card-btn-01">한번에 적용하기</button>
+              </div>
+            </div>
+
+            <!-- card 02 -->
+            <div class="product-wrap-card">
+              <div class="product-wrap-card-header">
+                <img src="../../resources/mobile/images/product_card02_01.png" alt="">
+                <div class="text-content black">
+                  <div class="text-content-tit">아이폰 12로 즐기는 ‘0’을 위한 혜택</div>
+                  <div class="text-content-txt">자세히 보기</div>
+                </div>
+              </div>
+              <div class="product-wrap-card-body">
+                <div class="content">
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card02_02.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">iPhone12 / iPhone12mini</div>
+                      <div class="text-content-txt">스피드 그 이상의 스피드</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card02_03.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">0플랜 라지</div>
+                      <div class="text-content-txt">가족데이터 최대 20GB 공유</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card02_04.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">멜론 익스트리밍 플러스</div>
+                      <div class="text-content-txt">‘멜론 스트리밍 클럽’ 서비스 기본 제공</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-wrap-card-footer">
+                <button class="product-wrap-card-btn-01">한번에 적용하기</button>
+              </div>
+            </div>
+
+            <!-- card 03 -->
+            <div class="product-wrap-card">
+              <div class="product-wrap-card-header">
+                <img src="../../resources/mobile/images/product_card-03_01.png" alt="">
+                <div class="text-content black">
+                  <div class="text-content-tit">갤럭시 퀀텀2로 누리는 초고속 5G</div>
+                  <div class="text-content-txt">자세히 보기</div>
+                </div>
+              </div>
+              <div class="product-wrap-card-body">
+                <div class="content">
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-03_02.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">Galaxy Quantum2</div>
+                      <div class="text-content-txt">양자보안 5G 스마트폰</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-03_03.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">T플랜 안심4G</div>
+                      <div class="text-content-txt">데이터 4GB 소진 후 1Mbps 속도 적용</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-03_04.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">FLO 앤 데이터 무료</div>
+                      <div class="text-content-txt">FLO 모바일 무제한 듣기 무료</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-wrap-card-footer">
+                <button class="product-wrap-card-btn-01">한번에 적용하기</button>
+              </div>
+            </div>
+
+            <!-- card 04 -->
+            <div class="product-wrap-card">
+              <div class="product-wrap-card-header">
+                <img src="../../resources/mobile/images/product_card-04_01.png" alt="">
+                <div class="text-content">
+                  <div class="text-content-tit">LG WING으로 어디서나 더 크게 즐겁게</div>
+                  <div class="text-content-txt">자세히 보기</div>
+                </div>
+              </div>
+              <div class="product-wrap-card-body">
+                <div class="content">
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-04_02.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">LG WING</div>
+                      <div class="text-content-txt">갤럭시 S21 울트라 5G</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-04_03.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">5GX 플래티넘</div>
+                      <div class="text-content-txt">5GX 데이터 완전 무제한</div>
+                    </div>
+                  </div>
+                  <div class="content-list">
+                    <img src="../../resources/mobile/images/product_card-04_04.png" alt="">
+                    <div class="text-content">
+                      <div class="text-content-tit">Wavve 앤 데이터 무료</div>
+                      <div class="text-content-txt">지상파 실시간 시청 및 다시보기 무료</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-wrap-card-footer">
+                <button class="product-wrap-card-btn-01">한번에 적용하기</button>
+              </div>
+            </div>
+          </figure>
+        </figure>
+        <div class="footer">
+          <div class="privacy_policy">
+            <div class="text-content">
+              <div class="text-content-tit">
+                <div>개인정보처리방침</div>
+                <div>개인정보이용내역</div>
+              </div>
+              <div class="buisnessman">
+                <div class="buisnessman-content">
+                  <div class="buisnessman-content-tit">에스케이텔레콤(주)<span> 사업자정보</span></div>
+                  <div class="buisnessman-content-txt">
+                    대표이사/사장 : 박정호<br />
+                    사업자등록번호 : 104-81-37225<br />
+                    판매허가번호 : 중구 02923호<br />
+                    서울특별시 중구 을지로 65<br />
+                    고객센터 : 1599-0111
+                  </div>
+                </div>
+              </div>
+              <div class="buisnessman">
+                <div class="buisnessman-content">
+                  <div class="buisnessman-content-tit">수탁운영업체 : 피에스앤마케팅(주)<span> 사업자정보</span></div>
+                  <div class="buisnessman-content-txt">
+                    사장 : 허선영<br />
+                    사업자등록번호 : 104-86-20016<br />
+                    판매허가번호 : 2020-서울마포-1276<br />
+                    서울특별시 마포구 마포대로 144(공덕동, 마포티타운)<br />
+                    고객센터 : 1599-0111
+                  </div>
+                  <div class="buisnessman-content-footer">
+                    © SK TELECOM., LTD
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-panel"></div>
+    <div class="phone-select-popup">
+      <figure class="category">
+        <div class="category-swiper">
+          <ul>
+            <li class="list select">
+              <div class="caregory-tit">전체</div>
+            </li>
+            <li class="list">
+              <div class="caregory-tit">삼성전자</div>
+            </li>
+            <li class="list">
+              <div class="caregory-tit">Apple</div>
+            </li>
+            <li class="list">
+              <div class="caregory-tit">LG전자</div>
+            </li>
+            <li class="list">
+              <div class="caregory-tit">기타</div>
+            </li>
+          </ul>
+        </div>
+      </figure>
+      <div>
+        <figure class="category">
+          <div class="category-swiper">
+            <ul>
+              <li class="content">
+                <img src="../../resources/mobile/images/caregory_01.png" alt="caregory_01">
+                갤럭시 퀀텀2
+              </li>
+              <li class="content">
+                <img src="../../resources/mobile/images/caregory_02.png" alt="caregory_02">
+                갤럭시 A42 5G
+              </li>
+              <li class="content">
+                <img src="../../resources/mobile/images/caregory_03.png" alt="caregory_03">
+                아이폰12
+              </li>
+              <li class="content">
+                <img src="../../resources/mobile/images/caregory_01.png" alt="caregory_01">
+                갤럭시 퀀텀2
+              </li>
+              <li class="content">
+                <img src="../../resources/mobile/images/caregory_01.png" alt="caregory_01">
+                갤럭시 퀀텀2
+              </li>
+            </ul>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../resources/mobile/js/lib/swiper.min.js"></script>
+<script src="../../resources/mobile/js/common.js"></script>
+
+</html>

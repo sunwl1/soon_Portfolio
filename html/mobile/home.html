@@ -1,0 +1,480 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>home</title>
+  <script src="../../resources/mobile/js/lib/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="../../resources/mobile/css/common.css">
+  <link rel="stylesheet" href="../../resources/mobile/css/mobile.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/xpressengine/xeicon@2.3.1/xeicon.min.css">
+  <link rel="stylesheet" href="../../resources/mobile/css/lib/swiper.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  <div class="wrap home">
+    <!-- <div class="gnb">
+      <div class="gnb-time"></div>
+      <div class="gnb-content">
+        <div>
+          <img src="../../resources/mobile/images/Cellular_Connection.png" alt="Cellular_Connection">
+          <img src="../../resources/mobile/images/Wifi.png" alt="Wifi">
+          <img src="../../resources/mobile/images/Battery.png" alt="Battery">
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <figure class="nav">
+        <div class="nav-comment">
+          <img class="nav-comment-img" src="../../resources/mobile/images/comment_img.png" alt="">
+          <i class="xi-calculator icon"></i>
+        </div>
+        <div class="nav-content">
+          <i class="xi-cart-o" id="Cart"></i>
+          <i class="xi-user-o" id="userIcon"></i>
+          <i class="xi-bars"></i>
+        </div>
+      </figure>
+      <div class="user-wrap">
+        <div class="user-wrap-tit">
+          송이님,<br />
+          오늘하루 걱정말고<br />
+          즐기세요!
+        </div>
+        <div class="user-wrap-content">
+          <div class="service-content">
+            <img src="../../resources/mobile/images/home/home_user_img_01.png" alt="home_user_img_01">
+            <div class="text-content">
+              <div class="text-content-tit">Wavve 앤 데이터</div>
+              <div class="text-content-txt">지상파 실시간 시청 및 다시보기 무료</div>
+            </div>
+          </div>
+          <div class="service-content">
+            <img src="../../resources/mobile/images/home/home_user_img_02.png" alt="home_user_img_02">
+            <div class="text-content">
+              <div class="text-content-tit">FLO 앤 데이터</div>
+              <div class="text-content-txt">FLO 모바일 무제한 듣기 무료</div>
+            </div>
+          </div>
+        </div>
+        <div class="user-wrap-footer">놀러가기</div>
+      </div>
+      <figure class="card">
+        <div class="card-content">
+          <div class="visual">
+            <div class="visual-header-wrap">
+              <header class="visual-header">
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-01.png" alt="">
+                  갤럭시퀀텀2
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-02.png" alt="">
+                  V 컬러링
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-03.png" alt="">
+                  행복배송
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-04.png" alt="">
+                  언택트플랜
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-05.png" alt="">
+                  아이폰12
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-05.png" alt="">
+                  아이폰12
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-05.png" alt="">
+                  아이폰12
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-05.png" alt="">
+                  아이폰12
+                </div>
+                <div class="visual-header-list">
+                  <img src="../../resources/mobile/images/home/visual-header-05.png" alt="">
+                  아이폰12
+                </div>
+              </header>
+            </div>
+            <div class="visual-body">
+              <div class="visual-label">
+                <h6 class="label-tit">
+                  고객님,<br />
+                  이런 상품은 어떠세요?
+                </h6>
+              </div>
+              <div class="visual-label">
+                <div class="label-txt">
+                  <div class="label-txt-scroll">
+                    <span class="select">#티다추천</span>
+                    <span>#금주의 특가</span>
+                    <span>#금주의 인기</span>
+                    <span>#신학기 특가</span>
+                  </div>
+                </div>
+              </div>
+              <figure class="visual-content">
+                <div class="scroll">
+                  <div class="visual-content-selection">
+                    <button class="introduce-selection" id="js-select-view-btn">
+                      <img src="../../resources/mobile/images/home/introduce_img_01.png" alt="">
+                      <div>
+                        <div class="introduce-selection-tit">갤럭시 퀀텀2</div>
+                        <div class="introduce-selection-txt"><span>5GX 프라임</span><span>128G</span></div>
+                        <div class="introduce-selection-txt2"><span>97,700</span><span>원/월</span></div>
+                      </div>
+                    </button>
+                    <button class="introduce-selection">
+                      <img src="../../resources/mobile/images/home/introduce_img_02.png" alt="">
+                      <div>
+                        <div class="introduce-selection-tit">갤럭시 A42 5G</div>
+                        <div class="introduce-selection-txt"><span>5GX 프라임</span><span>128G</span></div>
+                        <div class="introduce-selection-txt2"><span>97,700</span><span>원/월</span></div>
+                      </div>
+                    </button>
+                    <button class="introduce-selection">
+                      <img src="../../resources/mobile/images/home/introduce_img_03.png" alt="">
+                      <div>
+                        <div class="introduce-selection-tit">아이폰 퀀텀2</div>
+                        <div class="introduce-selection-txt"><span>5GX 프라임</span><span>128G</span></div>
+                        <div class="introduce-selection-txt2"><span>97,700</span><span>원/월</span></div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </figure>
+              <span class="line"></span>
+              <div class="visual-footer">모든 핸드폰 보기</div>
+              <figure class="product-wrap">
+                <figure class="product-swiper swiper-container">
+                  <div class="swiper-wrapper product-wrapper">
+                    <article class="swiper-slide">
+                      <img src="../../resources/mobile/images/home/product/card_BG_01.png" alt="">
+
+                    </article>
+                    <article class="swiper-slide">
+                      <img src="../../resources/mobile/images/home/product/card_BG_02.png" alt="">
+                    </article>
+                  </div>
+                </figure>
+                <div class="product-mini-scroll">
+                  <div class="scroll-container">
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card01_01.png" alt="">
+                      ADT 캡스홈
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card01_02.png" alt="">
+                      1등급 한우
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card01_03.png" alt="">
+                      미마마스크
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card01_04.png" alt="">
+                      파리바게뜨
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-mini-scroll">
+                  <div class="scroll-container">
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card02_01.png" alt="">
+                      정품보호필름
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card02_02.png" alt="">
+                      보조배터리
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card02_03.png" alt="">
+                      케이스 1+1
+                    </div>
+                    <div class="scroll-content">
+                      <img src="../../resources/mobile/images/home/product/card02_04.png" alt="">
+                      멀티스테이션
+                    </div>
+                  </div>
+                </div>
+
+                <figure class="benefits">
+                  <div class="benefits-tit">
+                    놓치고 있는 혜택은<br />
+                    없으신가요?
+                  </div>
+                  <div class="benefits-scroll">
+                    <div class="content">
+                      <img src="../../resources/mobile/images/home/benefits_01_img.png" alt="">
+                      T 기프트
+                    </div>
+                    <div class="content">
+                      <img src="../../resources/mobile/images/home/benefits_02_img.png" alt="">
+                      바로 보상
+                    </div>
+                    <div class="content">
+                      <img src="../../resources/mobile/images/home/benefits_03_img.png" alt="">
+                      FLO&데이터
+                    </div>
+                    <div class="content">
+                      <img src="../../resources/mobile/images/home/benefits_04_img.png" alt="">
+                      T 멤버십 VIP
+                    </div>
+                  </div>
+                  <img class="benefits-bandbanner" src="../../resources/mobile/images/home/band_banner.png" alt="">
+                </figure>
+                <figure class="review-wrap">
+                  <div class="review-tit">
+                    T 다이렉트샵 고객님들의<br />
+                    실제 이용 후기
+                  </div>
+                  <figure class="category">
+                    <div class="category-swiper">
+                      <ul>
+                        <li class="list select">
+                          <div class="caregory-tit">전체</div>
+                        </li>
+                        <li class="list">
+                          <div class="caregory-tit">바로도착</div>
+                        </li>
+                        <li class="list">
+                          <div class="caregory-tit">행복배송</div>
+                        </li>
+                        <li class="list">
+                          <div class="caregory-tit">택배</div>
+                        </li>
+                        <li class="list">
+                          <div class="caregory-tit">바로픽업</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </figure>
+                  <div class="review-scroll">
+                    <div class="review-scroll-content">
+                      <div class="review-scroll-content-list">
+                        <div class="list-01">
+                          <div class="star-content">
+                            <div class="starRev">
+                              <span class="starR1 on">별1_왼쪽</span>
+                              <span class="starR2">별1_오른쪽</span>
+                              <span class="starR1">별2_왼쪽</span>
+                              <span class="starR2">별2_오른쪽</span>
+                              <span class="starR1">별3_왼쪽</span>
+                              <span class="starR2">별3_오른쪽</span>
+                              <span class="starR1">별4_왼쪽</span>
+                              <span class="starR2">별4_오른쪽</span>
+                              <span class="starR1">별5_왼쪽</span>
+                              <span class="starR2">별5_오른쪽</span>
+                              <div class="starTxt">0.5</div>
+                            </div>
+                            <div class="date-txt">
+                              2021.04.16
+                            </div>
+                          </div>
+                          <div class="list-01-user">
+                            <div class="review">
+                              찾아오는 편리한 서비스, 제가 있는곳으로 오셔
+                              서 개통에서 백업까지 진행해주셨어요!
+                            </div>
+                            <div class="userName">최*규 고객님</div>
+                          </div>
+                        </div>
+                        <span class="line"></span>
+                        <div class="list-02">
+                          <img class="review_img" src="../../resources/mobile/images/home/review_img.png" alt="">
+                          <div class="list-02-text">
+                            <div class="tit">iPhone 12 Pro <span><span class="tit-content">행복배송</span></span></div>
+                            <div class="txt">T플랜 시니어 안심2.8G</div>
+                            <div class="content">
+                              <img src="../../resources/mobile/images/home/review_icon.png" alt="">
+                              <p class="js-review-txt">[삼성전자] micro SD카드 12점테스트점테스트점테스트점테스트점테스트</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-scroll-content-list">
+                        <div class="list-01">
+                          <div class="star-content">
+                            <div class="starRev">
+                              <span class="starR1 on">별1_왼쪽</span>
+                              <span class="starR2">별1_오른쪽</span>
+                              <span class="starR1">별2_왼쪽</span>
+                              <span class="starR2">별2_오른쪽</span>
+                              <span class="starR1">별3_왼쪽</span>
+                              <span class="starR2">별3_오른쪽</span>
+                              <span class="starR1">별4_왼쪽</span>
+                              <span class="starR2">별4_오른쪽</span>
+                              <span class="starR1">별5_왼쪽</span>
+                              <span class="starR2">별5_오른쪽</span>
+                              <div class="starTxt">0.5</div>
+                            </div>
+                            <div class="date-txt">
+                              2021.04.16
+                            </div>
+                          </div>
+                          <div class="list-01-user">
+                            <div class="review">
+                              찾아오는 편리한 서비스, 제가 있는곳으로 오셔
+                              서 개통에서 백업까지 진행해주셨어요!
+                            </div>
+                            <div class="userName">최*규 고객님</div>
+                          </div>
+                        </div>
+                        <span class="line"></span>
+                        <div class="list-02">
+                          <img class="review_img" src="../../resources/mobile/images/home/review_img.png" alt="">
+                          <div class="list-02-text">
+                            <div class="tit">iPhone 12 Pro <span><span class="tit-content">행복배송</span></span></div>
+                            <div class="txt">T플랜 시니어 안심2.8G</div>
+                            <div class="content">
+                              <img src="../../resources/mobile/images/home/review_icon.png" alt="">
+                              <p class="js-review-txt">[삼성전자] micro SD카드 12점테스트점테스트점테스트점테스트점테스트</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-scroll-content-list">
+                        <div class="list-01">
+                          <div class="star-content">
+                            <div class="starRev">
+                              <span class="starR1 on">별1_왼쪽</span>
+                              <span class="starR2">별1_오른쪽</span>
+                              <span class="starR1">별2_왼쪽</span>
+                              <span class="starR2">별2_오른쪽</span>
+                              <span class="starR1">별3_왼쪽</span>
+                              <span class="starR2">별3_오른쪽</span>
+                              <span class="starR1">별4_왼쪽</span>
+                              <span class="starR2">별4_오른쪽</span>
+                              <span class="starR1">별5_왼쪽</span>
+                              <span class="starR2">별5_오른쪽</span>
+                              <div class="starTxt">0.5</div>
+                            </div>
+                            <div class="date-txt">
+                              2021.04.16
+                            </div>
+                          </div>
+                          <div class="list-01-user">
+                            <div class="review">
+                              찾아오는 편리한 서비스, 제가 있는곳으로 오셔
+                              서 개통에서 백업까지 진행해주셨어요!
+                            </div>
+                            <div class="userName">최*규 고객님</div>
+                          </div>
+                        </div>
+                        <span class="line"></span>
+                        <div class="list-02">
+                          <img class="review_img" src="../../resources/mobile/images/home/review_img.png" alt="">
+                          <div class="list-02-text">
+                            <div class="tit">iPhone 12 Pro <span><span class="tit-content">행복배송</span></span></div>
+                            <div class="txt">T플랜 시니어 안심2.8G</div>
+                            <div class="content">
+                              <img src="../../resources/mobile/images/home/review_icon.png" alt="">
+                              <p class="js-review-txt">[삼성전자] micro SD카드 12점테스트점테스트점테스트점테스트점테스트</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-scroll-content-list">
+                        <div class="list-01">
+                          <div class="star-content">
+                            <div class="starRev">
+                              <span class="starR1 on">별1_왼쪽</span>
+                              <span class="starR2">별1_오른쪽</span>
+                              <span class="starR1">별2_왼쪽</span>
+                              <span class="starR2">별2_오른쪽</span>
+                              <span class="starR1">별3_왼쪽</span>
+                              <span class="starR2">별3_오른쪽</span>
+                              <span class="starR1">별4_왼쪽</span>
+                              <span class="starR2">별4_오른쪽</span>
+                              <span class="starR1">별5_왼쪽</span>
+                              <span class="starR2">별5_오른쪽</span>
+                              <div class="starTxt">0.5</div>
+                            </div>
+                            <div class="date-txt">
+                              2021.04.16
+                            </div>
+                          </div>
+                          <div class="list-01-user">
+                            <div class="review">
+                              찾아오는 편리한 서비스, 제가 있는곳으로 오셔
+                              서 개통에서 백업까지 진행해주셨어요!
+                            </div>
+                            <div class="userName">최*규 고객님</div>
+                          </div>
+                        </div>
+                        <span class="line"></span>
+                        <div class="list-02">
+                          <img class="review_img" src="../../resources/mobile/images/home/review_img.png" alt="">
+                          <div class="list-02-text">
+                            <div class="tit">iPhone 12 Pro <span><span class="tit-content">행복배송</span></span></div>
+                            <div class="txt">T플랜 시니어 안심2.8G</div>
+                            <div class="content">
+                              <img src="../../resources/mobile/images/home/review_icon.png" alt="">
+                              <p class="js-review-txt">[삼성전자] micro SD카드 12점테스트점테스트점테스트점테스트점테스트</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-footer">모든 리뷰 보기</div>
+                </figure>
+              </figure>
+            </div>
+            <div id="star-five"></div>
+          </div>
+        </div>
+      </figure>
+      <div class="footer">
+        <div class="privacy_policy">
+          <div class="text-content">
+            <div class="text-content-tit">
+              <div>개인정보처리방침</div>
+              <div>개인정보이용내역</div>
+            </div>
+            <div class="buisnessman">
+              <div class="buisnessman-content">
+                <div class="buisnessman-content-tit">에스케이텔레콤(주)<span> 사업자정보</span></div>
+                <div class="buisnessman-content-txt">
+                  대표이사/사장 : 박정호<br />
+                  사업자등록번호 : 104-81-37225<br />
+                  판매허가번호 : 중구 02923호<br />
+                  서울특별시 중구 을지로 65<br />
+                  고객센터 : 1599-0111
+                </div>
+              </div>
+            </div>
+            <div class="buisnessman">
+              <div class="buisnessman-content">
+                <div class="buisnessman-content-tit">수탁운영업체 : 피에스앤마케팅(주)<span> 사업자정보</span></div>
+                <div class="buisnessman-content-txt">
+                  사장 : 허선영<br />
+                  사업자등록번호 : 104-86-20016<br />
+                  판매허가번호 : 2020-서울마포-1276<br />
+                  서울특별시 마포구 마포대로 144(공덕동, 마포티타운)<br />
+                  고객센터 : 1599-0111
+                </div>
+                <div class="buisnessman-content-footer">
+                  © SK TELECOM., LTD
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../../resources/mobile/js/lib/swiper.min.js"></script>
+<script src="../../resources/mobile/js/common.js"></script>
+
+</html>
