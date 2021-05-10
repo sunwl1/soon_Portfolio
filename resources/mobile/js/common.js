@@ -33,18 +33,21 @@ let resize_height = window.innerHeight;
 var IorA = navigator.userAgent.toLowerCase();
 
 $(document).ready(function () {
-
-
+  //안드로이드의 경우
   if (IorA.indexOf("android") !== -1) {
     $(window).resize(function () {
+      //화면 변경시 전 사이즈가 작을경우
       if (resize_height < window.innerHeight) {
         $('.scroll-control').css('height', window.innerHeight + 'px');
-        $('.phone-select-popup').css('bottom', '-100px');
+        $('.phone-select-popup').css('bottom', '-190px');
+        //변경된 사이즈 resize_height변수에 세팅
         resize_height = window.innerHeight;
       }
       else {
+        // 화면 변경시 전 사이즈가 클경우
         $('.scroll-control').css('height', window.innerHeight + 'px');
-        $('.phone-select-popup').css('bottom', '-40px');
+        $('.phone-select-popup').css('bottom', '-105px');
+        //변경된 사이즈 resize_height변수에 세팅
         resize_height = window.innerHeight;
       }
     })
@@ -100,9 +103,13 @@ function homeMethods() {
 
 
   function limitTxt(el, limitNum) {
+    //최대 글자 갯수
     var $limitNum = limitNum;
+    //적용 시킬 제이쿼리 타겟
     var _el = el;
+
     if (_el.html().length >= $limitNum) {
+      //최대 글자 갯수 이후 <span>&#183;</span>으로 중간점 처리
       _el.html(_el.html().substring(0, $limitNum) + "<span>&#183;</span><span>&#183;</span><span>&#183;</span>");
     }
   }
@@ -132,10 +139,12 @@ function homeMethods() {
     }
   }
 
+  //터치 시작 좌표
   function touch_start(event) {
     start_x = event.touches[0].pageX
   }
 
+  //터치 종료후 시작좌표와 비교 좌우 판단
   function touch_end(event) {
     end_x = event.changedTouches[0].pageX;
     if (start_x == end_x)
@@ -150,8 +159,14 @@ function homeMethods() {
 
   /////별점 추가 스크립트
   $('.starRev span').click(function () {
+
+    //부모의 자식 span의 on클래스 전부 제거(on 상태일때 별 활성화);
     $(this).parent().children('span').removeClass('on');
+
+    //자신의 이전 span에 on 클래스 모두 추가
     $(this).addClass('on').prevAll('span').addClass('on');
+
+    //별점 수치 추가
     $(this).parent().children('.starTxt').html(($(this).addClass('on').prevAll().length / 2) + 0.5);
     return false;
   });
@@ -159,18 +174,22 @@ function homeMethods() {
   /////////////////////////////////////
   //// T 다이렉트 상단 인터렉션 움직이는 프로그레스
   $(document).scroll(function () {
+    //_commentAni에 함수가 담겨있지 않으면(중복 함수 실행 방지)
     if (_commentAni != null)
       return
+    // 최상단의 경우
     if ($(document).scrollTop() == 0) {
       _commentAni = commentAni();
     }
 
+    // gnb 하단에 해당 .visual-header-wrap의 박스의 상단 면적이 닿으면 scroll-on 클래스 추가 아니면 제거
     if ($('.nav').height() >= $('.visual-header-wrap').get(0).getBoundingClientRect().top) {
       $('.visual-header').addClass('scroll-on');
     }
     else {
       $('.visual-header').removeClass('scroll-on');
     }
+
     // if (($('.nav').height() + $('.gnb').height()) >= $('.visual-header-wrap').get(0).getBoundingClientRect().top) {
     //   $('.visual-header').addClass('scroll-on');
     // }
@@ -180,12 +199,19 @@ function homeMethods() {
   });
 
   function commentAni() {
+    //잠시후에 실행 0.5초
     setTimeout(() => {
+      //.nav-comment-img가 is-on클래스를 이미 가지고 있으면 통과
       if ($('.nav-comment-img').hasClass('is-on'))
         return
+      //.nav-comment-img에 is-on클래스를 추가
       $('.nav-comment-img').addClass('is-on')
+
+      //2초 이후에 실행(2초 동안 보여주고 사라짐)
       setTimeout(() => {
+        //.nav-comment-img에 is-on클래스를 제거
         $('.nav-comment-img').removeClass('is-on')
+        //_commentAni를 초기화
         _commentAni = null;
       }, 2000);
     }, 500);
@@ -194,10 +220,12 @@ function homeMethods() {
 
   //////////////스와이프 따라 스크롤 이동///////////////////////////////
   $(".swiper-slide").each(e => {
+    //스와이프 갯수만큼 스크롤 위치 세팅
     $(".product-mini-scroll").eq(e).offset({ left: $(".swiper-slide").eq(e).offset().left });
   });
 
   $(".product-swiper").on("touchmove touchend", function () {
+    //스와이프를 터치하고 움직이는 동안과 터치가 끝난 순간 스크롤 위치 세팅
     $(".product-mini-scroll").each(e => {
       $(".product-mini-scroll").eq(e).offset({ left: $(".swiper-slide").eq(e).offset().left });
     });
@@ -207,7 +235,9 @@ function homeMethods() {
   /// #상품 리스트 
   $(".label-txt-scroll span").each(e => {
     $(".label-txt-scroll span").eq(e).click(function () {
+      //.label-txt-scroll span의 select클래스 전부 제거
       $(".label-txt-scroll span").removeClass("select");
+      //클릭한 .label-txt-scroll span의 select클래스 추가
       $(".label-txt-scroll span").eq(e).addClass("select");
     })
   })
@@ -230,7 +260,8 @@ function tplannerMethods() {
     }
     else {
       $('.phone-select-popup').addClass('is-on');
-      $('.phone-select-popup').css('height', '260px');
+      $('.phone-select-popup').css('height', '350px');
+      $('.phone-select-popup').css('bottom', '-105px');
       $('.popup-panel').css('display', 'block');
       $('body').css('overflow-y', 'hidden');
       $(document).scrollTop(-1000);
@@ -241,31 +272,36 @@ function tplannerMethods() {
             return;
           if (resize_height < window.innerHeight) {
             $('.scroll-control').css('height', window.innerHeight + 'px');
-            $('.phone-select-popup').css('bottom', '-100px');
+            $('.phone-select-popup').css('bottom', '-190px');
             resize_height = window.innerHeight
           }
           else {
             $('.scroll-control').css('height', window.innerHeight + 'px');
-            $('.phone-select-popup').css('bottom', '-40px');
+            $('.phone-select-popup').css('bottom', '-105px');
             resize_height = window.innerHeight
           }
         }
-        
+        //IOS overflow-y 이슈 방지
+        //.scroll-control의 height를 사용중인 모바일의 화면 높이로 설정
         $('.scroll-control').css('height', window.innerHeight + 'px');
+        //컨텐츠의 부모인 .scroll-control를 overflow hidden 속성 추가
         $('.scroll-control').css('overflow', 'hidden');
         if (IorA.indexOf("iphone") !== -1) {
-          $('.phone-select-popup').css('bottom', '-40px');
+          $('.phone-select-popup').css('bottom', '-105px');
         }
       }, 100);
     }
   });
 
+  // 휴대폰 리스트 뷰 비활성화 panel
   $('.popup-panel').click(function () {
+    //.phone-select-popup가 is-on클래스가 있지 않으면
     if ($('.phone-select-popup').hasClass('is-on')) {
       $('.phone-select-popup').removeClass('is-on');
       $('.phone-select-popup').css('height', '0px');
       $('body').css('overflow-y', '');
       $(this).css('display', 'none');
+      //컨텐츠의 부모인 .scroll-control를 overflow hidden 속성 제거 
       $('.scroll-control').css('overflow', "");
       $('.scroll-control').css('height', "");
     }
@@ -283,6 +319,39 @@ function tplannerMethods() {
       $(".payment-view").slideDown();
       $('.payment-txt').addClass('changed');
     }
+  });
+
+  //휴대폰 선택
+  $(".btn-phone-select").each(e => {
+    $(".btn-phone-select").eq(e).click(function () {
+      //클릭된 .btn-phone-select의 src와 alt를 변수에 세팅
+      let src = $(".btn-phone-select").eq(e).prop('src');
+      //alt에는 선택한 휴대폰 이름 세팅
+      let alt = $(".btn-phone-select").eq(e).prop('alt');
+      //콘텐츠를 문자열로 저장하며 세팅한 src를 기입
+      let content = `<img class="selecting-phone" src=` + src + ` alt="">
+      <div class="speech-bubble">휴대폰을 선택해보세요</div>`
+
+      //타겟의 부모의 html에 세팅한 콘텐츠와 이름을 세팅한 alt 변수 기입
+      $('.selecting-phone').parent().html(content + alt)
+
+      //리스트뷰 종료
+      if ($('.phone-select-popup').hasClass('is-on')) {
+        $('.phone-select-popup').removeClass('is-on');
+        $('.phone-select-popup').css('height', '0px');
+        $('body').css('overflow-y', '');
+        $('.popup-panel').css('display', 'none');
+        $('.scroll-control').css('overflow', "");
+        $('.scroll-control').css('height', "");
+      }
+    })
+  });
+
+  //초기화 버튼
+  $('.phone-select-reset').click(function () {
+    //초기화시 본 컨텐츠 다시 추가
+    let content = `<img class="selecting-phone" src="../../resources/mobile/images/visual_content_01.png" alt="">휴대폰<div class="speech-bubble">휴대폰을 선택해보세요</div>`
+    $('.selecting-phone').parent().html(content);
   });
 }
 
