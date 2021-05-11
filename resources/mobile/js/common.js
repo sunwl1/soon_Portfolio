@@ -242,6 +242,7 @@ function homeMethods() {
     })
   })
   ///
+  typing();
 }
 
 function tplannerMethods() {
@@ -359,4 +360,50 @@ function tplannerMethods() {
 function plusZero(time) {
   (time < 10) ? time = "0" + time : time;
   return time;
+}
+
+//타이핑 함수
+function typing() {
+  //타이핑 클래스 담긴 제이쿼리 객체
+  let $this = $(".typing");
+
+  //전체 갯수
+  $this.get().forEach(e => {
+    //타겟의 html 가져옴
+    let typingTxt = $(e).html();
+    //넣어줄 문자 인덱스
+    let typingCount = 0;
+    //<br>이 있으면 임시로 /로 변환 인덱스로 읽어서 내려주기 위해
+    typingTxt = typingTxt.replaceAll("<br>", "/");
+    typingTxt = typingTxt.split("");
+    //타겟을 비우고 타이핑 애니메이션 추가
+    $(e).html("<span class='is-on'></span>");
+
+    //끝날때까지 반복
+    let tyMethods = setInterval(function () {
+      //문자 길이만큼
+      if (typingCount < typingTxt.length) {
+        //<br> 임시로 변환한거 사용 줄내려줌
+
+        if (typingTxt[typingCount] === "/") {
+          $(e).find(".is-on").before("<br/>");
+          typingCount++;
+          //문자 인덱스 단위로 넣어줌 타이핑 효과
+          $(e).find(".is-on").before(typingTxt[typingCount]);
+        }
+        else {
+          //문자 인덱스 단위로 넣어줌 타이핑 효과
+          $(e).find(".is-on").before(typingTxt[typingCount]);
+          typingCount++;
+        }
+      }
+      else {
+        //끝나면 반복 함수 제거
+        clearInterval(tyMethods);
+        //타이핑 효과 제거
+        $(e).find(".is-on").remove();
+        tyMethods = null;
+      }
+    }, 100);
+  });
 }
